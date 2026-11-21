@@ -50,6 +50,7 @@ jobs:
   build-push-update:
     name: Build, Push and Update GitOps repo
     needs: build-test-validate
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Source code
